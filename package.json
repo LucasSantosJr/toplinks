@@ -1,0 +1,27 @@
+{
+  "name": "toplinks",
+  "version": "1.0.0",
+  "description": "A website for hosting top links found on the internet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasSantosJr/toplinks.git"
+  },
+  "keywords": [
+    "links"
+  ],
+  "author": "LucasSantosJr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucasSantosJr/toplinks/issues"
+  },
+  "homepage": "https://github.com/LucasSantosJr/toplinks#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql2": "^1.5.2",
+    "sequelize": "^4.35.2"
+  }
+}
