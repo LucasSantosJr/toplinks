@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express()
 var linkRoute = require('./routes/linkRoute')
+var db = require('./database/connection')
 
 app.use(express.json())
 

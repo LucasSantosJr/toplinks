@@ -1,7 +1,7 @@
 var createNewLink = require('../services/createNewLink.js')
 
-function linkController (req, res) {
-  let result = createNewLink(req.body)
+async function linkController (req, res) {
+  let result = await createNewLink(req.body)
   res.send(result)
 }
 

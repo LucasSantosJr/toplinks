@@ -1,9 +1,11 @@
 var Link = require('../domains/Link')
+var db =  require('../database/connection')
 
-function createNewLink (options, repository) {
-
+async function createNewLink (options) {
+  let newLink
   try {
-    let newLink = Link(options.linkTitle, options.linkAddress, options.linkOwnerId)
+    newLink = Link(options.linkTitle, options.linkAddress, options.linkOwnerId)
+    await db.linkModel.create(newLink)
     return newLink
   } catch(err){
     return {
@@ -11,7 +13,7 @@ function createNewLink (options, repository) {
       'message': err.message
     }
   }
-//  repository.save(newLink)
+
 }
 
 module.exports = createNewLink

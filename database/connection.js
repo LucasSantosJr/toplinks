@@ -1,24 +1,19 @@
 var Sequelize = require('sequelize')
 var config = require('../configs/devconfig')
 
-const connection = new Sequelize(config.database, config.username, config.password, {
+const dbConnection = new Sequelize(config.database, config.username, config.password, {
   'dialect': config.dialect
 })
 
+var linkModel = require('./models/link')(dbConnection, Sequelize)
 
-connection.authenticate()
-  .then( function () {
-    console.log('Conectado')
-  })
-  .catch( function () {
-    console.log('Não conectado')
-  })
-
-
-const User = connection.define('user', {
-  name: {
-      type: Sequelize.STRING
-  }
+linkModel.sync().then(() => {
+  console.log('Working');
 })
 
-User.sync()
+//link.findAll().then(function (links) {
+//  console.log(links[1].dataValues)
+//})
+
+module.exports.dbConnection = dbConnection
+module.exports.linkModel = linkModel
