@@ -1,10 +1,10 @@
-function Link (linkTitle, linkAddress, linkOwnerId) {
+function Link(linkTitle, linkAddress, linkOwnerId) {
 
-  if (typeof linkTitle === 'undefined' || typeof linkAddress === 'undefined' || typeof linkOwnerId === 'undefined' ) {
+  if (typeof linkTitle === 'undefined' || typeof linkAddress === 'undefined' || typeof linkOwnerId === 'undefined') {
     throw new Error('Some args are missing!')
   }
 
-  if (typeof linkTitle !== 'string' || typeof linkAddress !== 'string' || typeof linkOwnerId !== 'number' ) {
+  if (typeof linkTitle !== 'string' || typeof linkAddress !== 'string' || typeof linkOwnerId !== 'number') {
     throw new TypeError('The wrong type was passed!')
   }
 

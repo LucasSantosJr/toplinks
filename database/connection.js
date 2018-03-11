@@ -11,9 +11,5 @@ linkModel.sync().then(() => {
   console.log('Working');
 })
 
-//link.findAll().then(function (links) {
-//  console.log(links[1].dataValues)
-//})
-
 module.exports.dbConnection = dbConnection
 module.exports.linkModel = linkModel

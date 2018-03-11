@@ -1,13 +1,16 @@
 var express = require('express')
 var app = express()
-var linkRoute = require('./routes/linkRoute')
+var createLink = require('./routes/createLinkRoute')
+var getAllLinks = require('./routes/getAllLinksRoute')
+
 var db = require('./database/connection')
 
 app.use(express.json())
 
-app.use('/', linkRoute)
+app.use('/', createLink)
+app.use('/', getAllLinks)
 
-app.use( function (req, res, next) {
+app.use(function (req, res, next) {
   res.statusCode = 404
   res.send('404 not found')
 })
