@@ -15,6 +15,6 @@ app.use(function (req, res, next) {
   res.send('404 not found')
 })
 
-app.listen(8080)
-
-console.log('Running on the port 8080')
+app.listen(8080, () => {
+  console.log('Running on the port 8080')
+})
